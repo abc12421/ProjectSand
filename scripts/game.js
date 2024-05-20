@@ -63,10 +63,10 @@ const refreshTimes = [];
 /* ========================================================================= */
 
 function init() {
-  var gameWrapper = document.getElementById("gameWrapper");
+/**  var gameWrapper = document.getElementById("gameWrapper");
   gameWrapper.style.height = height + "px";
   gameWrapper.style.width = width + "px";
-
+**/
   /* setting FPS must occur before initMenu() */
   setFPS(DEFAULT_FPS);
 
@@ -223,10 +223,8 @@ function perfRecordFrame() {
     lastFPSLabelUpdate = now;
   }
 }
-
 function mainLoop(now) {
-  window.requestAnimationFrame(mainLoop);
-
+window.requestAnimationFrame(mainLoop)
   /* Handle initial update */
   if (lastLoop === 0) {
     lastLoop = now;

@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 :root {
     color-scheme: dark;
     --bg: #272723;
     --yellow: #F3B600;
     --fg: #FFFFFFE8;
     --bg-dialog: #414137;
+    --border-secondry-color: #919191;
     --retroBorder:
         2px 0 var(--yellow),
         -2px 0 var(--yellow),
@@ -12,87 +15,31 @@
 }
 
 * {
+    font-family: "VT323", monospace;
+    font-size: 18px;
     padding: 0;
     margin: 0;
 }
 
 body {
     color: var(--fg);
-    font-family: system-ui;
 }
 
-.optionButton,
-.elementMenuButton,
-.aboutButton,
-#menuWrapper {
+.button {
+    border: none;
+    padding: .2rem;
+    box-shadow: var(--retroBorder);
     background-color: var(--bg)
 }
 
-.wrapper {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 5px;
-    place-items: center;
+.button:active {
+    background-color: var(--yellow);
+    color: var(--bg);
+
 }
 
 input {
     accent-color: var(--yellow)
-}
-
-#menuWrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-
-.elementMenuButton {
-    border: 1px solid #919191;
-    padding: 2px;
-    text-align: center;
-    width: 100%;
-    min-width: 5rem;
-    font-size: .9rem;
-}
-
-.selectedElementMenuButton {
-    border: none;
-    box-shadow: var(--retroBorder);
-}
-
-.optionsCol {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: .5rem;
-    padding: .1rem;
-}
-
-.optionsCol div {
-    display: flex;
-    justify-content: space-between
-}
-
-.optionButton {
-    color: var(--fg);
-    border: unset;
-    box-shadow: var(--retroBorder);
-    margin: 5px;
-}
-
-.aboutModal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: none;
-    background-color: var(--bg-dialog);
-    color: var(--fg);
-    text-align: center;
-    padding: 1rem;
-
 }
 
 a {
@@ -104,16 +51,100 @@ a:visited {
     color: var(--yellow);
 }
 
-.aboutButton {
+.elementMenuButton,
+#menuWrapper {
+    background-color: var(--bg)
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr .5fr;
+    place-items: stretch;
+}
+
+#menuWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: .5rem;
+}
+
+.elementMenuButton {
+    border: 1px solid var(--border-secondry-color);
+    padding: 2px;
+    text-align: center;
+    min-width: 5rem;
+    font-size: 1rem;
+}
+
+.selectedElementMenuButton {
     border: none;
-    padding-inline: 5px;
     box-shadow: var(--retroBorder);
 }
 
-.info-wrapper {
+.optionsCol {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+    padding: .1rem;
+
+}
+
+.optionsCol div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.optionButton {
+    margin: .2rem;
+}
+
+.aboutModal {
+    grid-template-columns: 1fr;
+    grid-template-rows: .1fr 1fr;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    background-color: var(--bg-dialog);
+    color: var(--fg);
+
+
+}
+
+.aboutModal[open] {
+    display: grid;
+}
+
+.modalContent {
+    text-align: center;
+    padding: 1rem;
+    padding-top: 0;
+}
+
+.modalCloseButton {
+    margin: .5rem;
+    margin-bottom: 0;
+    place-self: end;
+    padding-block: .1rem;
+    padding-inline: .3rem
+}
+
+.infoWrapper {
     display: flex;
     width: 100%;
-    padding: 5px;
     padding-inline: 1rem;
+    padding-block: .5rem;
     justify-content: space-between;
+}
+
+@media screen and (width >=700px) {
+    .wrapper {
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 1fr;
+    }
 }

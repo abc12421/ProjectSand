@@ -117,7 +117,6 @@ const CHARGED_NITRO = __inGameColor(245, 98, 78);
 const ACID = __inGameColor(157, 240, 40);
 const THERMITE = __inGameColor(195, 140, 70);
 const BURNING_THERMITE = __inGameColor(255, 130, 130);
-
 /*
  * It would be nice to combine the elements and elementActions
  * into a single 2d array, but to optimize for speed we need
@@ -164,6 +163,7 @@ const elements = new Uint32Array([
   ACID,
   THERMITE,
   BURNING_THERMITE,
+  
 ]);
 const elementActions = [
   BACKGROUND_ACTION,
@@ -203,6 +203,7 @@ const elementActions = [
   ACID_ACTION,
   THERMITE_ACTION,
   BURNING_THERMITE_ACTION,
+ 
 ];
 Object.freeze(elementActions);
 
@@ -258,6 +259,7 @@ function initElements() {
   GAS_PERMEABLE[POLLEN] = null;
   GAS_PERMEABLE[CHARGED_NITRO] = null;
   GAS_PERMEABLE[ACID] = null;
+ 
   Object.freeze(GAS_PERMEABLE);
 }
 
@@ -640,6 +642,7 @@ const __lava_immune = [
   WATER,
   SALT_WATER,
   STEAM,
+  
 ];
 Object.freeze(__lava_immune);
 const __num_lava_immune = __lava_immune.length;

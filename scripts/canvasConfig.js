@@ -16,12 +16,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 const __max_width = 560;
 const __max_height = 480;
 
-const width =  Math.trunc(visualViewport.width-1);
-const height = width > visualViewport.height ? Math.trunc(visualViewport.height) :  Math.trunc(visualViewport.height-200);
+const width = screen.width < screen.height ? (screen.width) : (Math.round((70/100)*screen.width));
+const height = screen.width < screen.height ? Math.round((60/100)*screen.height) : screen.height;
 
 const MAX_FPS = 120;
 const DEFAULT_FPS = 60;

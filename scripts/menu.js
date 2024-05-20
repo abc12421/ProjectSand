@@ -62,7 +62,6 @@ menuNames[MYSTERY] = "???";
 menuNames[SOIL] = "SOIL";
 menuNames[ACID] = "ACID";
 menuNames[THERMITE] = "THERMITE";
-
 /*
  * Some element colors do not have very good contrast against
  * the menu background. For these elements, we use a replacement
@@ -81,8 +80,7 @@ function initMenu() {
 
   /* Set up the wrapper div that holds the element selectors */
   const elementMenu = document.getElementById("elementTable");
-  elementMenu.style.width =
-    "50%"; /* force browser to scrunch the element menu */
+  //elementMenu.style.width =  "50%"; (overritten by css) /* force browser to scrunch the element menu */
   const numRows = Math.ceil(
     elementMenuItems.length / ELEMENT_MENU_ELEMENTS_PER_ROW
   );

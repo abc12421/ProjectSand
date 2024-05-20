@@ -18,18 +18,11 @@
 
     <div class="wrapper" id="gameWrapper">
 
-        <dialog id="modal" class="aboutModal">
-            <button class="aboutButton" style="float:right" onclick="document.getElementById('modal').close()">X</button>
-            <h1>Project Sand</h1>
-            <a href="https://github.com/joshdon/ProjectSand">Source Code</a>
-            <span>By: Josh Don</span>
-            <a href="http://androdome.com/Sand/">Original Applet</a>
-        </dialog>
         <canvas id="mainCanvas">Your browser doesn't support HTML5 canvas.</canvas>
-
         <div id="menuWrapper">
             <table id="elementTable">
             </table>
+
             <div id="optionsCol1" class="optionsCol">
                 <div id="penSizeDiv">
                     <label for="pensize">Pen Size</label>
@@ -57,24 +50,35 @@
                     <label for="overwriteCheckbox">Overwrite</label>
                     <input type="checkbox" id="overwriteCheckbox">
                 </div>
+
                 <div id="speedSliderDiv">
                     <label for="speedSlider">Speed</label>
                     <input type="range" id="speedSlider">
                 </div>
-                <input id="saveButton" class="optionButton" type="button" value="Save">
-                <input id="loadButton" class="optionButton" type="button" value="Load">
-                <input id="clearButton" class="optionButton" type="button" value="Clear">
+                <input id="saveButton" class="optionButton button" type="button" value="Save">
+                <input id="loadButton" class="optionButton button" type="button" value="Load">
+                <input id="clearButton" class="optionButton button" type="button" value="Clear">
 
             </div>
-            <div>
 
-            </div>
-            <div class="info-wrapper">
+
+            <div class="infoWrapper">
                 <span id="fps-counter"></span>
-                <button id="about" class="aboutButton" onclick="javascript:document.getElementById('modal').showModal()">About</button>
+                <button id="about" class="aboutButton button" onclick="javascript:document.getElementById('modal').showModal();document.body.style.overflow='hidden'">About</button>
             </div>
         </div>
     </div>
+    <dialog id="modal" class="aboutModal">
+        <button class="modalCloseButton button" style="float:right" onclick="document.getElementById('modal').close();document.body.style.overflow='auto'">X</button>
+        <div class="modalContent">
+            <h1>Project Sand</h1>
+            <a href="https://github.com/joshdon/ProjectSand">Source Code</a>
+            <span>By: Josh Don</span>
+            <a href="http://androdome.com/Sand/">Original Applet</a>
+
+        </div>
+    </dialog>
+
     <script type="text/javascript" src="scripts/util.js"></script>
     <script type="text/javascript" src="scripts/canvasConfig.js"></script>
     <script type="text/javascript" src="scripts/cursor.js"></script>
