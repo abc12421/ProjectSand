@@ -19,8 +19,8 @@
 const __max_width = 560;
 const __max_height = 480;
 
-const width = screen.width < screen.height ? (screen.width) : (Math.round((70/100)*screen.width));
-const height = screen.width < screen.height ? Math.round((60/100)*screen.height) : screen.height;
+const width = Math.round(visualViewport.width) < Math.round(visualViewport.height) ? Math.round(screen.width) : Math.round(visualViewport.width - (document.getElementById("menuWrapper").clientWidth + 15));
+const height = Math.round(visualViewport.width) < Math.round(screen.height) ? Math.round((60/100)*visualViewport.height) : Math.round(visualViewport.height);
 
 const MAX_FPS = 120;
 const DEFAULT_FPS = 60;
